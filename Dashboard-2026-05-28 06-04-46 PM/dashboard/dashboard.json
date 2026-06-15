@@ -1,0 +1,658 @@
+{
+   "entries": {"resourceKind": [
+      {
+         "resourceKindKey": "HCA Division",
+         "internalId": "resourceKind:id:1_::_",
+         "adapterKindKey": "Container"
+      },
+      {
+         "resourceKindKey": "VirtualMachine",
+         "internalId": "resourceKind:id:0_::_",
+         "adapterKindKey": "VMWARE"
+      }
+   ]},
+   "dashboards": [{
+      "shared": false,
+      "temporary": false,
+      "hidden": false,
+      "creationTime": 1779812187052,
+      "autoswitchEnabled": false,
+      "importAttempts": 0,
+      "lastUpdateUserId": "4487958f-794e-4b70-b9b8-7b414b1a0e2e",
+      "columnProportion": "1",
+      "importComplete": true,
+      "description": "",
+      "columnCount": 1,
+      "widgets": [
+         {
+            "collapsed": false,
+            "id": "0a442773-01d1-457e-b982-0d5a47e191a5",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 7,
+               "h": 4,
+               "y": 10
+            },
+            "type": "View",
+            "title": "Disk Usage (for selected VM)",
+            "config": {
+               "refreshInterval": 300,
+               "resource": null,
+               "traversalSpecId": "",
+               "refreshContent": {"refreshContent": true},
+               "isUpdatedView": true,
+               "chartViewItems": [],
+               "selectFirstRow": {"selectFirstRow": true},
+               "selfProvider": {"selfProvider": false},
+               "title": "Disk Usage (for selected VM)",
+               "viewDefinitionId": "bf6f779d-b37d-408e-a0c9-3e0cf25aa2f5"
+            },
+            "height": 210,
+            "states": [
+               {
+                  "value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5-column-0%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5-column-Instance%25252520Name1%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5-column-guestfilesystem%2525253A/%2525257Cpercentage2%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5-column-guestfilesystem%2525253A/%2525257Cusage3%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5-column-guestfilesystem%2525253A/%2525257Ccapacity4%25255Ehidden%25253Db%2525253A0",
+                  "key": "permTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5"
+               },
+               {
+                  "value": "s%3A%7B%22minType%22%3A%22.TimeIntervalControl%22%2C%22advancedTimeMode%22%3Afalse%2C%22fromTime%22%3Anull%2C%22unit%22%3A%22DAYS%22%2C%22count%22%3A7%2C%22priorUnit%22%3Anull%2C%22priorCount%22%3Anull%2C%22startSubUnit%22%3Anull%2C%22startPeriod%22%3Anull%2C%22toTime%22%3Anull%2C%22endUnit%22%3Anull%2C%22endCount%22%3Anull%2C%22endSubUnit%22%3Anull%2C%22endPeriod%22%3Anull%7D",
+                  "key": "permSelectedDate_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5"
+               },
+               {
+                  "value": "b%3A0",
+                  "key": "perm_isDashboardTime_widget_9619dda2-a430-4553-9360-c0b7d4b33064_0a442773-01d1-457e-b982-0d5a47e191a5"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "609cffd1-ec7e-4aa9-8980-43a7d31f0cdb",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 1,
+               "h": 4,
+               "y": 14
+            },
+            "type": "HealthChart",
+            "title": "Network Usage Rate (for selected VM)",
+            "config": {
+               "metricName": "Network|Usage Rate (KBps)",
+               "metricKey": "net|usage_average",
+               "relationshipMode": {"relationshipMode": 0},
+               "sortByDir": {"orderByDir": "asc"},
+               "title": "Network Usage Rate (for selected VM)",
+               "showResourceName": {"showResourceName": true},
+               "chartHeight": 135,
+               "metricUnit": {
+                  "metricUnitId": -1,
+                  "metricUnitName": "Default Unit"
+               },
+               "mode": "all",
+               "metricType": {"metricType": "custom"},
+               "filterMode": "tagPicker",
+               "tagFilter": null,
+               "paginationNumber": 15,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selectFirstRow": {"selectFirstRow": false},
+               "sortBy": "metricValue",
+               "selfProvider": {"selfProvider": false},
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "resourceKindId": "resourceKind:id:0_::_",
+               "metricFullName": "Network|Usage Rate (KBps)",
+               "showMetricLabel": {"showMetricLabel": false},
+               "depth": 1,
+               "metricLabel": ""
+            },
+            "height": 210,
+            "states": [{
+               "value": "s%3A%7B%22dateRange%22%3A%22dashboardTime%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+               "key": "permDateRange_HealthChart_widget_9619dda2-a430-4553-9360-c0b7d4b33064_609cffd1-ec7e-4aa9-8980-43a7d31f0cdb"
+            }]
+         },
+         {
+            "collapsed": false,
+            "id": "b50fd74b-c481-424e-9b33-a0ae90c066b9",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 4,
+               "h": 4,
+               "y": 14
+            },
+            "type": "HealthChart",
+            "title": "Disk Usage (for selected VM)",
+            "config": {
+               "yellowBound": 70,
+               "metricName": "Guest File System|Utilization (%)",
+               "metricKey": "guestfilesystem|percentage_total",
+               "relationshipMode": {"relationshipMode": 0},
+               "sortByDir": {"orderByDir": "asc"},
+               "title": "Disk Usage (for selected VM)",
+               "showResourceName": {"showResourceName": true},
+               "chartHeight": 135,
+               "metricUnit": {
+                  "metricUnitId": -1,
+                  "metricUnitName": "Default Unit"
+               },
+               "mode": "all",
+               "metricType": {"metricType": "custom"},
+               "filterMode": "tagPicker",
+               "tagFilter": null,
+               "paginationNumber": 15,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selectFirstRow": {"selectFirstRow": false},
+               "sortBy": "metricValue",
+               "selfProvider": {"selfProvider": false},
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "resourceKindId": "resourceKind:id:0_::_",
+               "orangeBound": 80,
+               "metricFullName": "Guest File System|Utilization (%)",
+               "showMetricLabel": {"showMetricLabel": false},
+               "depth": 1,
+               "metricLabel": "",
+               "redBound": 90
+            },
+            "height": 210,
+            "states": [{
+               "value": "s%3A%7B%22dateRange%22%3A%22dashboardTime%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+               "key": "permDateRange_HealthChart_widget_9619dda2-a430-4553-9360-c0b7d4b33064_b50fd74b-c481-424e-9b33-a0ae90c066b9"
+            }]
+         },
+         {
+            "collapsed": false,
+            "id": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "gridsterCoords": {
+               "w": 8,
+               "x": 5,
+               "h": 9,
+               "y": 1
+            },
+            "type": "View",
+            "title": "VMs (select a VM to populate widgets)",
+            "config": {
+               "refreshInterval": 300,
+               "resource": null,
+               "traversalSpecId": "",
+               "refreshContent": {"refreshContent": true},
+               "isUpdatedView": true,
+               "chartViewItems": [],
+               "selectFirstRow": {"selectFirstRow": true},
+               "selfProvider": {"selfProvider": false},
+               "title": "VMs (select a VM to populate widgets)",
+               "viewDefinitionId": "ca8845bd-424b-4540-85ed-74b8902b63ed"
+            },
+            "height": 495,
+            "states": [
+               {
+                  "value": "b%3A1",
+                  "key": "perm_toolbarVisible_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e"
+               },
+               {
+                  "value": "s%3A%7B%22minType%22%3A%22.TimeIntervalControl%22%2C%22advancedTimeMode%22%3Afalse%2C%22fromTime%22%3Anull%2C%22unit%22%3A%22HOURS%22%2C%22count%22%3A24%2C%22priorUnit%22%3Anull%2C%22priorCount%22%3Anull%2C%22startSubUnit%22%3Anull%2C%22startPeriod%22%3Anull%2C%22toTime%22%3Anull%2C%22endUnit%22%3Anull%2C%22endCount%22%3Anull%2C%22endSubUnit%22%3Anull%2C%22endPeriod%22%3Anull%2C%22isRealTimeData%22%3Anull%2C%22mondayHours%22%3Anull%2C%22tuesdayHours%22%3Anull%2C%22wednesdayHours%22%3Anull%2C%22thursdayHours%22%3Anull%2C%22fridayHours%22%3Anull%2C%22saturdayHours%22%3Anull%2C%22sundayHours%22%3Anull%7D",
+                  "key": "permSelectedDate_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e"
+               },
+               {
+                  "value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-0%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-badge%2525257Chealth1%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-summary%2525257Cruntime%2525257CpowerState2%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-summary%2525257Cguest%2525257CfullName3%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-config%2525257Chardware%2525257Cnum_Cpu4%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-cpu%2525257Cusage_average5%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-config%2525257Chardware%2525257CmemoryKB6%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-mem%2525257Cusage_average7%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-guestfilesystem%2525257Ccapacity_total8%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-guestfilesystem%2525257Cpercentage_total9%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-summary%2525257Cconfig%2525257CnumEthernetCards10%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253ApermTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e-column-net%2525257Cusage_average11%25255Ehidden%25253Db%2525253A0",
+                  "key": "permTableView_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e"
+               },
+               {
+                  "value": "b%3A0",
+                  "key": "perm_isDashboardTime_widget_9619dda2-a430-4553-9360-c0b7d4b33064_2585f15b-fcaa-4aa5-b58d-95eb74c2836e"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "83b171d2-3522-449f-a181-04d6ccbd22a2",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 1,
+               "h": 4,
+               "y": 10
+            },
+            "type": "HealthChart",
+            "title": "CPU Usage (for selected VM)",
+            "config": {
+               "yellowBound": 90,
+               "metricName": "CPU|Usage (%)",
+               "metricKey": "cpu|usage_average",
+               "relationshipMode": {"relationshipMode": 0},
+               "sortByDir": {"orderByDir": "asc"},
+               "title": "CPU Usage (for selected VM)",
+               "showResourceName": {"showResourceName": true},
+               "chartHeight": 135,
+               "metricUnit": {
+                  "metricUnitId": -1,
+                  "metricUnitName": "Default Unit"
+               },
+               "mode": "all",
+               "metricType": {"metricType": "custom"},
+               "filterMode": "tagPicker",
+               "tagFilter": null,
+               "paginationNumber": 15,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selectFirstRow": {"selectFirstRow": false},
+               "sortBy": "metricValue",
+               "selfProvider": {"selfProvider": false},
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "resourceKindId": "resourceKind:id:0_::_",
+               "orangeBound": 95,
+               "metricFullName": "CPU|Usage (%)",
+               "showMetricLabel": {"showMetricLabel": false},
+               "depth": 1,
+               "metricLabel": "",
+               "redBound": 99
+            },
+            "height": 210,
+            "states": [
+               {
+                  "value": "s%3A%7B%22dateRange%22%3A%22dashboardTime%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+                  "key": "permDateRange_HealthChart_widget_9619dda2-a430-4553-9360-c0b7d4b33064_83b171d2-3522-449f-a181-04d6ccbd22a2"
+               },
+               {
+                  "value": "b%3A0",
+                  "key": "perm_toolbarVisible_widget_9619dda2-a430-4553-9360-c0b7d4b33064_83b171d2-3522-449f-a181-04d6ccbd22a2"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "f4a20278-283f-4297-bcd3-1a8b7131e584",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 4,
+               "h": 4,
+               "y": 10
+            },
+            "type": "HealthChart",
+            "title": "Memory Usage (for selected VM)",
+            "config": {
+               "yellowBound": 90,
+               "metricName": "Memory|Usage (%)",
+               "metricKey": "mem|usage_average",
+               "relationshipMode": {"relationshipMode": 0},
+               "sortByDir": {"orderByDir": "asc"},
+               "title": "Memory Usage (for selected VM)",
+               "showResourceName": {"showResourceName": true},
+               "chartHeight": 135,
+               "metricUnit": {
+                  "metricUnitId": -1,
+                  "metricUnitName": "Default Unit"
+               },
+               "mode": "all",
+               "metricType": {"metricType": "custom"},
+               "filterMode": "tagPicker",
+               "tagFilter": null,
+               "paginationNumber": 15,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selectFirstRow": {"selectFirstRow": false},
+               "sortBy": "metricValue",
+               "selfProvider": {"selfProvider": false},
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "resourceKindId": "resourceKind:id:0_::_",
+               "orangeBound": 95,
+               "metricFullName": "Memory|Usage (%)",
+               "showMetricLabel": {"showMetricLabel": false},
+               "depth": 1,
+               "metricLabel": "",
+               "redBound": 99
+            },
+            "height": 210,
+            "states": [
+               {
+                  "value": "b%3A0",
+                  "key": "perm_toolbarVisible_widget_9619dda2-a430-4553-9360-c0b7d4b33064_f4a20278-283f-4297-bcd3-1a8b7131e584"
+               },
+               {
+                  "value": "s%3A%7B%22dateRange%22%3A%22dashboardTime%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+                  "key": "permDateRange_HealthChart_widget_9619dda2-a430-4553-9360-c0b7d4b33064_f4a20278-283f-4297-bcd3-1a8b7131e584"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "f13ca8ed-a1a7-4404-8ad2-fd7ceece3e10",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 10,
+               "h": 8,
+               "y": 10
+            },
+            "type": "Scoreboard",
+            "title": "Scoreboard (for selected VM)",
+            "config": {
+               "maxCellCount": 100,
+               "oldMetricValues": true,
+               "relationshipMode": {"relationshipMode": 0},
+               "valueSize": 24,
+               "title": "Scoreboard (for selected VM)",
+               "boxHeight": null,
+               "showResourceName": {"showResourceName": false},
+               "roundDecimals": 0,
+               "mode": {"layoutMode": "fixedView"},
+               "labelSize": 16,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selfProvider": {"selfProvider": false},
+               "resInteractionMode": null,
+               "visualTheme": 9,
+               "showMetricName": {"showMetricName": true},
+               "refreshInterval": 300,
+               "resource": [],
+               "showDT": {"showDT": true},
+               "refreshContent": {"refreshContent": true},
+               "showMetricUnit": {"showMetricUnit": true},
+               "depth": 1,
+               "metric": {
+                  "mode": "resourceKind",
+                  "resourceMetrics": [],
+                  "resourceKindMetrics": [
+                     {
+                        "yellowBound": 90,
+                        "metricUnitId": -1,
+                        "metricName": "CPU|Usage",
+                        "metricKey": "cpu|usage_average",
+                        "handleOldColoring": false,
+                        "maxValue": "100",
+                        "defUnit": "%",
+                        "link": "",
+                        "resourceKindName": "Virtual Machine",
+                        "isStringMetric": false,
+                        "resourceKindId": "resourceKind:id:0_::_",
+                        "label": "CPU Usage %",
+                        "orangeBound": 95,
+                        "unit": "Auto",
+                        "redBound": 99,
+                        "id": "extModel5537-1",
+                        "colorMethod": 0
+                     },
+                     {
+                        "yellowBound": 90,
+                        "metricUnitId": -1,
+                        "metricName": "Memory|Usage",
+                        "metricKey": "mem|usage_average",
+                        "handleOldColoring": false,
+                        "maxValue": "100",
+                        "defUnit": "%",
+                        "link": "",
+                        "resourceKindName": "Virtual Machine",
+                        "isStringMetric": false,
+                        "resourceKindId": "resourceKind:id:0_::_",
+                        "label": "Memory Usage %",
+                        "orangeBound": 95,
+                        "unit": "Auto",
+                        "redBound": 99,
+                        "id": "extModel5537-2",
+                        "colorMethod": 0
+                     },
+                     {
+                        "yellowBound": 70,
+                        "metricUnitId": -1,
+                        "metricName": "Guest File System|Utilization",
+                        "metricKey": "guestfilesystem|percentage_total",
+                        "handleOldColoring": false,
+                        "maxValue": "100",
+                        "defUnit": "%",
+                        "link": "",
+                        "resourceKindName": "Virtual Machine",
+                        "isStringMetric": false,
+                        "resourceKindId": "resourceKind:id:0_::_",
+                        "label": "Disk Usage %",
+                        "orangeBound": 80,
+                        "unit": "Auto",
+                        "redBound": 90,
+                        "id": "extModel5537-3",
+                        "colorMethod": 0
+                     }
+                  ],
+                  "subMode": "resourceKindAll"
+               },
+               "showSparkline": {"showSparkline": false},
+               "boxColumns": 1,
+               "periodLength": null
+            },
+            "height": 438
+         },
+         {
+            "collapsed": false,
+            "id": "4fdbe1cd-628b-4520-b732-e529e4646063",
+            "gridsterCoords": {
+               "w": 3,
+               "x": 7,
+               "h": 4,
+               "y": 14
+            },
+            "type": "AlertList",
+            "title": "Active Alerts (related to selected VM)",
+            "config": {
+               "alertImpact": [],
+               "alertAction": [],
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "relationshipMode": {"relationshipMode": [
+                  1,
+                  -1
+               ]},
+               "criticalityLevel": [],
+               "title": "Active Alerts (related to selected VM)",
+               "type": [],
+               "mode": "all",
+               "filterMode": "tagPicker",
+               "tagFilter": null,
+               "alertDefinitions": [],
+               "depth": 1,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selfProvider": {"selfProvider": false},
+               "state": [],
+               "status": [0]
+            },
+            "height": 210,
+            "states": [
+               {
+                  "value": "s%3A%7B%22dateRange%22%3A%22last30Days%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+                  "key": "permDateFilter_widget_9619dda2-a430-4553-9360-c0b7d4b33064_4fdbe1cd-628b-4520-b732-e529e4646063"
+               },
+               {
+                  "value": "s%3ADEFINITION",
+                  "key": "permViewMode_widget_9619dda2-a430-4553-9360-c0b7d4b33064_4fdbe1cd-628b-4520-b732-e529e4646063"
+               },
+               {
+                  "value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah1%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%5EstoreState%3Do%253Asorters%253Da%25253Ao%2525253Aroot%2525253Ds%252525253Adata%2525255Eproperty%2525253Ds%252525253AalertLevel%2525255Edirection%2525253Ds%252525253ADESC%2525255Eid%2525253Ds%252525253AalertLevel",
+                  "key": "permAlertGrid_perm_widget_9619dda2-a430-4553-9360-c0b7d4b33064_4fdbe1cd-628b-4520-b732-e529e4646063"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "e85facde-d728-4c1f-98d2-4e12b5383c80",
+            "gridsterCoords": {
+               "w": 12,
+               "x": 1,
+               "h": 7,
+               "y": 18
+            },
+            "type": "LogAnalysis",
+            "title": "Log Analysis (for selected VM and parent ESXi Host)",
+            "config": {
+               "queryFilter_searchtext": [],
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "relationshipMode": {"relationshipMode": 1},
+               "queryFilter": {
+                  "size": 50,
+                  "query": {"bool": {"filter": []}}
+               },
+               "title": "Log Analysis (for selected VM and parent ESXi Host)",
+               "liViewMode": "all",
+               "liOverTime": {
+                  "isOverTime": true,
+                  "groupBy": []
+               },
+               "liAggregationFunction": {"eventType": "count"},
+               "mode": "all",
+               "depth": 1,
+               "chartType": "column",
+               "liQueryMode": 1,
+               "selfProvider": {"selfProvider": false}
+            },
+            "height": 381,
+            "states": [
+               {
+                  "value": "s%3A%7B%22dateRange%22%3A%22dashboardTime%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+                  "key": "permDateRange_widget_9619dda2-a430-4553-9360-c0b7d4b33064_e85facde-d728-4c1f-98d2-4e12b5383c80"
+               },
+               {
+                  "value": "n%3A0",
+                  "key": "perm_liActiveTabId_widget_9619dda2-a430-4553-9360-c0b7d4b33064_e85facde-d728-4c1f-98d2-4e12b5383c80"
+               }
+            ]
+         },
+         {
+            "collapsed": false,
+            "id": "b7efeb17-d983-47b4-8362-cace19a3d78b",
+            "gridsterCoords": {
+               "w": 4,
+               "x": 1,
+               "h": 9,
+               "y": 1
+            },
+            "type": "ResourceList",
+            "title": "HCA Divisions",
+            "config": {
+               "refreshInterval": 300,
+               "resource": [],
+               "refreshContent": {"refreshContent": true},
+               "relationshipMode": {"relationshipMode": 0},
+               "title": "HCA Divisions",
+               "additionalColumns": [],
+               "mode": "all",
+               "filterMode": "tagPicker",
+               "tagFilter": {
+                  "path": ["/source/kind/kind:resourceKind:id:1_::_"],
+                  "value": {
+                     "bus": [],
+                     "adapterKind": [],
+                     "kind": ["resourceKind:id:1_::_"],
+                     "exclaim": false,
+                     "healthRange": [],
+                     "maintenanceSchedule": [],
+                     "adapterInstance": [],
+                     "collector": [],
+                     "tier": [],
+                     "state": [],
+                     "tag": [],
+                     "day": [],
+                     "status": []
+                  }
+               },
+               "depth": 1,
+               "customFilter": {
+                  "filter": [],
+                  "excludedResources": null,
+                  "includedResources": null
+               },
+               "selectFirstRow": {"selectFirstRow": true},
+               "selfProvider": {"selfProvider": true}
+            },
+            "height": 495,
+            "states": [{
+               "value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah14%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253AresourceRating%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah27%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah28%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah29%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah30%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah31%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah32%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah33%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah34%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah35%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah36%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah37%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah38%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah39%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah40%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah41%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah42%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah43%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah44%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah45%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah46%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100%255Eo%25253Aid%25253Ds%2525253Ah47%25255Ehidden%25253Db%2525253A1%25255Ewidth%25253Dn%2525253A100",
+               "key": "permResGrid_widget_9619dda2-a430-4553-9360-c0b7d4b33064_b7efeb17-d983-47b4-8362-cace19a3d78b"
+            }]
+         }
+      ],
+      "userId": "4487958f-794e-4b70-b9b8-7b414b1a0e2e",
+      "states": [{
+         "value": "o%3AdateRange%3Ds%253Alast7Days%5EdateRangeText%3Ds%253A7D",
+         "key": "permDashboardTime_dashboard_9619dda2-a430-4553-9360-c0b7d4b33064"
+      }],
+      "homeTab": false,
+      "name": "TomTest - Troubleshooting VMs",
+      "gridsterMaxColumns": 12,
+      "rank": 0,
+      "disabled": false,
+      "id": "9619dda2-a430-4553-9360-c0b7d4b33064",
+      "locked": false,
+      "dashboardNavigations": {},
+      "widgetInteractions": [
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "0a442773-01d1-457e-b982-0d5a47e191a5"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "609cffd1-ec7e-4aa9-8980-43a7d31f0cdb"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "b50fd74b-c481-424e-9b33-a0ae90c066b9"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "83b171d2-3522-449f-a181-04d6ccbd22a2"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "f4a20278-283f-4297-bcd3-1a8b7131e584"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "f13ca8ed-a1a7-4404-8ad2-fd7ceece3e10"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "4fdbe1cd-628b-4520-b732-e529e4646063"
+         },
+         {
+            "widgetIdProvider": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e",
+            "type": "resourceId",
+            "widgetIdReceiver": "e85facde-d728-4c1f-98d2-4e12b5383c80"
+         },
+         {
+            "widgetIdProvider": "b7efeb17-d983-47b4-8362-cace19a3d78b",
+            "type": "resourceId",
+            "widgetIdReceiver": "2585f15b-fcaa-4aa5-b58d-95eb74c2836e"
+         }
+      ],
+      "lastUpdateTime": 1779988947124
+   }],
+   "uuid": "f4dbb82f-ba8a-483d-a4d7-29aaa47df1ec"
+}

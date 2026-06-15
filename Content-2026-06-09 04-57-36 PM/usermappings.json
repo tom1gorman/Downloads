@@ -1,0 +1,15 @@
+{
+   "sources": [{
+      "sourceId": "fc06d776-f232-4ec4-ae79-1109673daa2c",
+      "sourcePort": 443,
+      "sourceType": "VIDM",
+      "sourceHost": "vidm.vmw.medcity.net"
+   }],
+   "users": [{
+      "userSourceId": "fc06d776-f232-4ec4-ae79-1109673daa2c",
+      "userLastName": "Gorman",
+      "userFirstName": "Tom",
+      "userName": "NTU2422@hca.corpad.net",
+      "userId": "4487958f-794e-4b70-b9b8-7b414b1a0e2e"
+   }]
+}

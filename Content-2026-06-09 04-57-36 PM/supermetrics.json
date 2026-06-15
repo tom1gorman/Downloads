@@ -1,0 +1,912 @@
+{
+   "d6367f4c-4fee-4bd6-bbf2-d09fe636d5d9": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133833,
+      "name": "Ops. Percentage of VM with CPU Ready",
+      "formula": "count( ${adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|readyPct, depth=2, where=\">1\"}) / ${this, metric=summary|number_running_vms}*100",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "a825d30e-e879-4a87-bee0-6cfd4c8a3330": {
+      "resourceKinds": [{
+         "resourceKindKey": "Application Tier",
+         "adapterKindKey": "Container"
+      }],
+      "modificationTime": 1724161133848,
+      "name": "Ops. App-Tier Health",
+      "formula": "Avg(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_8b3b71f5-82f6-4053-bdb8-a46a7ca9347c, depth=1})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "c7b28474-211e-4173-8d55-d283ce26f764": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133858,
+      "name": "Rightsize - Potential Memory Consumed Reclaimable (GB)",
+      "formula": "${this, metric=summary|oversized} && ${this, metric=mem|consumed_average} > ${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory} ? (${this, metric=mem|consumed_average} - (${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory}))/1024/1024 : 0",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "e1e6f2d0-980b-4d6d-ab70-f12737b9741d": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1739852551984,
+      "name": "HCA Cluster HA N+x",
+      "formula": "${this, metric=configuration|dasConfig|admissionControlPolicy|memoryFailoverResourcesPercent}<${this, metric=configuration|dasConfig|admissionControlPolicy|cpuFailoverResourcesPercent} ?ceil(.01*${this, metric=configuration|dasConfig|admissionControlPolicy|memoryFailoverResourcesPercent}*${this, metric=summary|number_running_hosts}) :ceil(.01*${this, metric=configuration|dasConfig|admissionControlPolicy|cpuFailoverResourcesPercent}*${this, metric=summary|number_running_hosts})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "33f6f935-4fb0-4e0d-b3af-895966f70a7d"
+   },
+   "1865d4e2-00e4-4d8c-8ff5-04e084419d73": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133866,
+      "name": "Guest Needed Memory is not collecting",
+      "formula": "${this, metric=sys|poweredOn} && max(${this, metric=guest|mem.needed_latest}) == 0",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "822de086-4602-4031-ab7a-c46eccbeaa64": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133874,
+      "name": "Count of ESXi 7.0.3 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.3\", depth=4})",
+      "description": "Track deployments of ESXi 7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "ea9d7500-8703-453a-9d42-cdccf5b52461": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133882,
+      "name": "Rightsize - Memory to Add to Undersized VMs",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|undersized|memory, depth=10})/1024/1024",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "a0683dab-d588-4b47-b8e9-e86341b18a0e": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133890,
+      "name": "Host CPU NUMA Boundary",
+      "formula": "${this, metric=cpu|corecount_provisioned}/${this, metric=hardware|cpuInfo|numCpuPackages}",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "d3ad3d03-9ccf-4ad1-96dc-062abd8a8994": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133894,
+      "name": "Count of UCS ESXi 7.0.3 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.3' && ${metric=Hardware|Vendor} startsWith 'Cisco')})",
+      "description": "Track deployments of ESXi 7.0.3 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "5efb039b-4740-462b-a8eb-9ba0b2f9108d": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133901,
+      "name": "Ops. Max VM CPU Ready (%)",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|readyPct, depth=5})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "f72369a3-5145-45e8-9242-1742d6ac96d2": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133910,
+      "name": "Rightsize - Memory to Remove from Oversized VMs",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|oversized|memory, depth=10})/1024/1024",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "eac1f96c-30f5-4dac-8e17-b285f5feaaff": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133917,
+      "name": "Ops. Red KPI VMs",
+      "formula": "count(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=Super Metric|sm_8b3b71f5-82f6-4053-bdb8-a46a7ca9347c, depth=5,where=\"<25\"})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "0f8901d6-3bf8-4739-83b7-96d202745127": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133923,
+      "name": "Ops. Cluster Performance (%)",
+      "formula": "100-(sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_42bc1eda-fa25-45cc-a759-ada99c1de721, depth=2})/${this, metric=summary|number_running_vms}*100/4)",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "8a9e56c6-6095-4d78-ad5e-40744587f17c": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133931,
+      "name": "Ops. Max VM Network Usage (Mbps)",
+      "formula": "Max(${adapterkind=VMWARE, resourcekind=VirtualMachine, attribute=net|usage_average, depth=5}) * 8 / 1000",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "f20bb12a-dd82-4214-b704-4b73988afc0e": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualSANDCCluster",
+         "adapterKindKey": "VirtualAndPhysicalSANAdapter"
+      }],
+      "modificationTime": 1724161133936,
+      "name": "Ops. Hybrid vSAN KPI",
+      "formula": "avg([   ${this, metric=kpi|diskGroupCongestionAbove60_count}                 as DG60                 >  10   ? 12.5 : ( DG60                 >   5 ? 37.5 : ( DG60                 >  1   ? 62.5 : 87.5 )),  ${this, metric=kpi|capacityDiskLatency_max}                          as CapaLatency          >   5   ? 12.5 : ( CapaLatency          >   3 ? 37.5 : ( CapaLatency          >  1   ? 62.5 : 87.5 )),  ${this, metric=kpi|diskGroupCongestion_max}                          as Congestion           > 200   ? 12.5 : ( Congestion           > 100 ? 37.5 : ( Congestion           > 60   ? 62.5 : 87.5 )),  ${this, metric=kpi|diskGroupCacheLatency_max}                        as CacheLatency         >   5   ? 12.5 : ( CacheLatency         >   3 ? 37.5 : ( CacheLatency         >  1   ? 62.5 : 87.5 )),    ${this, metric=kpi|diskGroupWriteBufferFree_min}                     as WriteBuffer          <  20   ? 12.5 : ( WriteBuffer          <  35 ? 37.5 : ( WriteBuffer          < 50   ? 62.5 : 87.5 )),   ${this, metric=kpi|diskGroupErrors_sum}                              as Errors               >   2   ? 12.5 : ( Errors               >   1 ? 37.5 : ( Errors               >  0   ? 62.5 : 87.5 )),    ${this, metric=kpi|diskGroupReadCacheHitRate_min} as CacheHit < 85 ? 12.5 : ( CacheHit < 90 ? 37.5 : ( CacheHit < 85 ? 62.5 : 87.5 ))  ,    ${this, metric=kpi|hostVMKernelPacketDropped_sum}                    as PacketDrop           >   2   ? 12.5 : ( PacketDrop           >   1 ? 37.5 : ( PacketDrop           >  0   ? 62.5 : 87.5 ))  ])",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "62aea573-c748-4a12-9235-dbe5babe37bd": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133946,
+      "name": "Count of ESXi 6.5.0",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.5.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.5.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "32eb60c3-694f-4fd9-b9e2-430ed3848768": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133950,
+      "name": "Count of prior to ESXi 7.0.3",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.2\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.1\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.0\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.0\", depth=4})",
+      "description": "Track deployments of prior to ESXi 7.0.3 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "8b3b71f5-82f6-4053-bdb8-a46a7ca9347c": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133955,
+      "name": "Ops. VM KPI",
+      "formula": "Avg ([   ${this, metric=cpu|usage_average}                                    as CPU_Usage      >     90 ? 12.5 : (CPU_Usage            >    80 ? 37.5 : (CPU_Usage            >   70 ? 62.5 : 87.5 )),         ${this, metric=cpu|readyPct}                                         as CPU_Ready      >    7.5 ? 12.5 : (CPU_Ready            >     5 ? 37.5 : (CPU_Ready            >  2.5 ? 62.5 : 87.5 )),         ${this, metric=cpu|costopPct}                                        as CPU_CoStop     >    7.5 ? 12.5 : (CPU_CoStop           >     5 ? 37.5 : (CPU_CoStop           >  2.5 ? 62.5 : 87.5 )),         ${this, metric=mem|host_contentionPct}                               as RAM_Contention >      5 ? 12.5 : (RAM_Contention       >     3 ? 37.5 : (RAM_Contention       >    1 ? 62.5 : 87.5 )),     ${this, metric=virtualDisk:Aggregate of all instances|totalLatency}  as Disk_Latency   >     30 ? 12.5 : (Disk_Latency         >    20 ? 37.5 : (Disk_Latency         >   10 ? 62.5 : 87.5 ))     ])",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "7e1207da-02b4-4e05-8baf-d0e42e6b1319": {
+      "resourceKinds": [],
+      "modificationTime": 1724161133965,
+      "name": "Max VM CPU Contention (%) in a Cluster",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VIrtualMachine, attribute=cpu|capacity_contentionPct, depth=2})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "3cc4d662-692d-4885-934f-5b8760a561f8": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133959,
+      "name": "Rightsize - Potential Cost Savings Total",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_0e3d6099-d2a3-49b4-8c65-b84aea91e0e7, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "0ccf0ff4-a279-42f4-8abe-8dcbafee5bae": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133971,
+      "name": "Ops. Percentage of VM with CPU CoStop",
+      "formula": "count(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|costopPct, depth=2, where=\">0.5\"}) / ${this, metric=summary|number_running_vms}*100",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "d5ba4f62-dd17-4938-988f-cb1bdd509aa2": {
+      "resourceKinds": [],
+      "modificationTime": 1724161133976,
+      "name": "Max VM Aggregate Disk Latency (ms) in a Cluster",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=virtualDisk|totalLatency, depth=1})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "fc3b222a-c19a-4db5-9cf2-33745780daf6": {
+      "resourceKinds": [],
+      "modificationTime": 1724161133982,
+      "name": "Max VM Memory Contention (%) in a Cluster",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=mem|host_contentionPct, depth=2})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "bd812200-4794-4cc3-9e1f-2daead31d7b5": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161133986,
+      "name": "Ops. Percentage of VM with RAM Contention",
+      "formula": "count( ${adaptertype=VMWARE, objecttype=VirtualMachine, metric=mem|host_contentionPct, depth=5, where=\">0.25\"}) / ${this, metric=summary|number_running_vms}*100",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "0e3d6099-d2a3-49b4-8c65-b84aea91e0e7": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161133994,
+      "name": "Rightsize - Potential Cost Savings",
+      "formula": "( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|oversized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_ab378c76-0dce-4c09-ad8d-1c9ff8540882} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|oversized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_c7b28474-211e-4173-8d55-d283ce26f764} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "fa1da8b1-23ac-4d13-b47e-b84f69662be1": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134001,
+      "name": "NCDV VM Snapshot Count",
+      "formula": "count(${this, attribute=diskspace|snapshot|name})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "f2f5ddb2-9050-4afb-ad15-d90c722e2e8b": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134011,
+      "name": "Context Swap Rate Total Capacity",
+      "formula": "${this, metric=config|hardware|num_Cpu} * 15000",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "374218b5-714e-48a7-af30-a86d58d9716f": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134018,
+      "name": "vCPU to Core Allocation Ratio",
+      "formula": "${this, metric=summary|number_running_vcpus}/${this, metric=cpu|corecount_provisioned}",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "89cd8f91-2bd0-417e-8e2c-c4eeb2200f65": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134022,
+      "name": "Rightsize - Potential Cost Increase",
+      "formula": "( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|undersized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_f969e72d-7775-44d7-973a-c92319fcd08b} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|undersized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_bac94c64-ebd3-40a6-992e-7fd1b4d480b4} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "371065ff-7af0-4a81-b938-4789b045ec46": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134026,
+      "name": "Count of ESXi 6.0.0",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.0.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.0.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "0b77c556-2f28-4618-9f04-de2ab5a373f1": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134031,
+      "name": "Count of UCS ESXi prior to 7.0.3 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '6.0' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '6.5' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.0' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.1' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.2' && ${metric=Hardware|Vendor} startsWith 'Cisco')})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "7f92b6f9-da06-4c65-b604-2c675f5d4e6b": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134037,
+      "name": "NCDV VM Notes",
+      "formula": "count(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=sys|notes, depth=1})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "910b38b3-c8ee-4f1d-9bc9-ea57f632c4a0": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134044,
+      "name": "Count of UCS ESXi 7.0.3",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.3' && ${metric=Hardware|Vendor} startsWith 'Cisco')})",
+      "description": "Track deployments of ESXi 7.0.3 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "076754ce-12ad-4872-ad94-6664503263e1": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134048,
+      "name": "VM Uptime",
+      "formula": "count(${this, metric=summary|runtime|powerState, where=\"summary|runtime|powerState contains Powered On\"}) * ceil( min([ max([${this, metric=sys|osUptime_latest}, ${this, metric=mem|workload} , ${this, metric=virtualDisk:Aggregate of all instances|commandsAveraged_average} , ${this, metric=net|transmitted_average}                   ]) , 1])) * Min([ 300 , ${this, metric=sys|osUptime_latest}]) / 3",
+      "description": "Ignite Super Metric for VM Uptime",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "1e33a024-3428-42fe-93b1-84256bf062e1": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134055,
+      "name": "Count of UCS ESXi prior to 7.0.3",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '6.0' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '6.5' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.0' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.1' && ${metric=Hardware|Vendor} startsWith 'Cisco')}) + count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '7.0.2' && ${metric=Hardware|Vendor} startsWith 'Cisco')})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "9df8638e-1844-4b41-97bc-ae114ad87f75": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134062,
+      "name": "Count of ESXi 7.0.x by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0\", depth=4})",
+      "description": "Track deployments of ESXi 7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "397791d7-d388-4e57-916b-e08d77656b29": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134066,
+      "name": "Count of ESXi 7.0.x",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0\", depth=4})",
+      "description": "Track deployments of ESXi 7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "ad36a282-5860-4a11-8e21-16c21e174c67": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1741020032738,
+      "name": "NUMA Optimal VM Cores per Socket",
+      "formula": "ceil(${this, metric=config|hardware|numCpu})/((${this, metric=config|hardware|memoryKB}/1024/1024) <= (sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|memorySize, depth=-1})/1024/1024)/sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuPackages, depth=-1})      ?  ((${this, metric=config|hardware|numCpu} as vmCPUs) % 2           ?  vmCPUs          : vmCPUs + 1)  <=     (sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuCores, depth=-1}) / sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|cpuInfo|numCpuPackages,      depth=-1}))           ?             1           : ceil(vmCPUs/(sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuCores, depth=-1}) / sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|cpuInfo|numCpuPackages, depth=-1})))     : ceil((${this, metric=config|hardware|memoryKB}/1024/1024) / ((sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|memorySize, depth=-1})/1024/1024)/sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuPackages, depth=-1}))))",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "45cc3527-f587-42b5-afe7-38e0033f7dc5"
+   },
+   "66f2ae4a-8a69-4c66-91a2-7f9de3efe11f": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "VMwareAdapter Instance",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134074,
+      "name": "Ops. Red KPI Clusters",
+      "formula": "count(${adaptertype=VMWARE, objecttype=ClusterComputeResource, attribute=Super Metric|sm_dce0f070-6750-4ca8-a928-5fee540ddeff, depth=5,where=\"<25\"})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "13a4d9ca-5271-47db-9478-14c4b7d1f02a": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134078,
+      "name": "Count of UCS ESXi 6.5.0",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, attribute=summary|version, depth=4, where=($value startsWith '6.5.0' && ${metric=Hardware|Vendor} startsWith 'Cisco')})",
+      "description": "Track deployments of ESXi 6.5.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "ef21c31a-76b1-403b-94c4-95a04d282640": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134081,
+      "name": "VM Number of Snapshots",
+      "formula": "count(${this, attribute=diskspace|snapshot|name})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "06488d0c-07b4-4680-99e9-a5f15259c9c2": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134090,
+      "name": "Rightsize - Potential Cost Increase Total",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_89cd8f91-2bd0-417e-8e2c-c4eeb2200f65, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "756abea8-c722-47e0-94ab-df3b767bcf19": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134098,
+      "name": "Count of ESXi 6.7.0 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.7.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "93fa4123-2646-458c-992c-ba6e16b64f6b": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134109,
+      "name": "Ops. Max VM RAM Contention (%)",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=mem|host_contentionPct, depth=5})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "ff17218c-f817-479c-8dbf-009758a39789": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134114,
+      "name": "Host Memory NUMA Boundary",
+      "formula": "${this, metric=mem|host_usable}/${this, metric=hardware|cpuInfo|numCpuPackages}/1048576",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "88ce6c62-20be-495f-a724-6a7285994a65": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134118,
+      "name": "Ops. Cluster KPI",
+      "formula": "avg([   ${this, metric=Super Metric|sm_5efb039b-4740-462b-a8eb-9ba0b2f9108d} as MaxCPUReady          > 10   ? 12.5 : ( MaxCPUReady          >  5 ? 37.5 : ( MaxCPUReady          >  1   ? 62.5 : 87.5 )),   ${this, metric=Super Metric|sm_bb35ec23-6079-4d82-9730-3743ed682387} as MaxCoStop            > 10   ? 12.5 : ( MaxCoStop            >  5 ? 37.5 : ( MaxCoStop            >  1   ? 62.5 : 87.5 )),   ${this, metric=mem|max_vm_mem_contention}                            as MaxRAMContention     >  5   ? 12.5 : ( MaxRAMContention     >  3 ? 37.5 : ( MaxRAMContention     >  1   ? 62.5 : 87.5 )),   ${this, metric=Super Metric|sm_d6367f4c-4fee-4bd6-bbf2-d09fe636d5d9} as ReadyPercentage      >  7.5 ? 12.5 : ( ReadyPercentage      >  5 ? 37.5 : ( ReadyPercentage      >  2.5 ? 62.5 : 87.5 )),   ${this, metric=Super Metric|sm_0ccf0ff4-a279-42f4-8abe-8dcbafee5bae} as CoStopPercentage     >  7.5 ? 12.5 : ( CoStopPercentage     >  5 ? 37.5 : ( CoStopPercentage     >  2.5 ? 62.5 : 87.5 )), ${this, metric=Super Metric|sm_bd812200-4794-4cc3-9e1f-2daead31d7b5} as RAMContentPercentage >  7.5 ? 12.5 : ( RAMContentPercentage >  5 ? 37.5 : ( RAMContentPercentage >  2.5 ? 62.5 : 87.5 )), ${this, metric=cpu|demand|max_host_workload}                         as MaxESXiCPUDemand     > 90   ? 12.5 : ( MaxESXiCPUDemand     > 85 ? 37.5 : ( MaxESXiCPUDemand     > 80   ? 62.5 : 87.5 )), ${this, metric=mem|consumed|max_host_workload}                       as MaxESXiRAMConsumed   > 95   ? 12.5 : ( MaxESXiRAMConsumed   > 90 ? 37.5 : ( MaxESXiRAMConsumed   > 85   ? 62.5 : 87.5 )),  ${this, metric=mem|demand|max_host_workload}                         as MaxESXiRAMActive     > 65   ? 12.5 : ( MaxESXiRAMActive     > 60 ? 37.5 : ( MaxESXiRAMActive     > 55   ? 62.5 : 87.5 )), ${this, metric=net:physical|droppedPct}                              as PacketDropped        >  2   ? 12.5 : ( PacketDropped        >  1 ? 37.5 : ( PacketDropped        >  0   ? 62.5 : 87.5 )) ])",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "f5f0adac-981c-4e24-825f-2069b49bf2ed": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134122,
+      "name": "Count of ESXi 7.0.3",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.3\", depth=4})",
+      "description": "Track deployments of ESXi 7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "f969e72d-7775-44d7-973a-c92319fcd08b": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134126,
+      "name": "Rightsize - Potential CPU Usage Increase (GHz)",
+      "formula": "(${this, metric=summary|undersized} && ${this, metric=cpu|demandmhz} > ${this, metric=cpu|usagemhz_average}) ? (${this, metric=cpu|demandmhz} - ${this, metric=cpu|usagemhz_average}) / 1000 : 0",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "49855c83-3744-438f-8fbc-954c87497649": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134131,
+      "name": "Rightsize - vCPUs to Add to Undersized VMs",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|undersized|vcpus, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "d6d21496-971e-46d1-b583-2742da31ce46": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualSANDCCluster",
+         "adapterKindKey": "VirtualAndPhysicalSANAdapter"
+      }],
+      "modificationTime": 1724161134136,
+      "name": "Ops. All Flash vSAN KPI",
+      "formula": "avg([   ${this, metric=kpi|diskGroupCongestionAbove60_count}                 as DG60                 >  10   ? 12.5 : ( DG60                 >   5 ? 37.5 : ( DG60                 >  1   ? 62.5 : 87.5 )),  ${this, metric=kpi|capacityDiskLatency_max}                          as CapaLatency          >   5   ? 12.5 : ( CapaLatency          >   3 ? 37.5 : ( CapaLatency          >  1   ? 62.5 : 87.5 )),  ${this, metric=kpi|diskGroupCongestion_max}                          as Congestion           > 200   ? 12.5 : ( Congestion           > 100 ? 37.5 : ( Congestion           > 60   ? 62.5 : 87.5 )),  ${this, metric=kpi|diskGroupCacheLatency_max}                        as CacheLatency         >   5   ? 12.5 : ( CacheLatency         >   3 ? 37.5 : ( CacheLatency         >  1   ? 62.5 : 87.5 )),   ${this, metric=kpi|diskGroupWriteBufferFree_min}                     as WriteBuffer          <  20   ? 12.5 : ( WriteBuffer          <  35 ? 37.5 : ( WriteBuffer          < 50   ? 62.5 : 87.5 )),  ${this, metric=kpi|diskGroupErrors_sum}                              as Errors               >   2   ? 12.5 : ( Errors               >   1 ? 37.5 : ( Errors               >  0   ? 62.5 : 87.5 )),  ${this, metric=kpi|hostVMKernelPacketDropped_sum}                    as PacketDrop           >   2   ? 12.5 : ( PacketDrop           >   1 ? 37.5 : ( PacketDrop           >  0   ? 62.5 : 87.5 ))  ])",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "ab378c76-0dce-4c09-ad8d-1c9ff8540882": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134143,
+      "name": "Rightsize - Potential CPU Usage Reclaimable (GHz)",
+      "formula": "0",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "06794141-f9ae-480b-b98c-d2d6ac83748c": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134146,
+      "name": "Count of ESXi 6.0.0 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.0.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.0.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "81fbf815-4f40-4db1-96e8-25d528e3d806": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724076407342,
+      "name": "HCA Cluster Threshold",
+      "formula": "((${this, metric=summary|number_running_hosts}-1)/${this, metric=summary|number_running_hosts})*80",
+      "description": "",
+      "unitId": "percent",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "740a9494-6935-4e88-aa93-1dea711db0b8": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134150,
+      "name": "CPU Queue Total Capacity",
+      "formula": "${this, metric=config|hardware|num_Cpu} * 2",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "7683bcf3-26c7-4f5e-ac0d-e214d718128a": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134153,
+      "name": "NUMA Optimal VM Sockets",
+      "formula": "(${this, metric=config|hardware|memoryKB}/1024/1024) <= (sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|memorySize, depth=-1})/1024/1024)/sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuPackages, depth=-1})      ?  ((${this, metric=config|hardware|numCpu} as vmCPUs) % 2           ?  vmCPUs          : vmCPUs + 1)  <=     (sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuCores, depth=-1}) / sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|cpuInfo|numCpuPackages,      depth=-1}))           ?             1           : ceil(vmCPUs/(sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuCores, depth=-1}) / sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|cpuInfo|numCpuPackages, depth=-1})))     : ceil((${this, metric=config|hardware|memoryKB}/1024/1024) / ((sum(${adaptertype=VMWARE, objecttype=HostSystem, metric=hardware|memorySize, depth=-1})/1024/1024)/sum(${adaptertype=VMWARE, objecttype=HostSystem, attribute=hardware|cpuInfo|numCpuPackages, depth=-1})))",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "e0ca8714-e19c-41e3-b446-4e78fd66f306": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134157,
+      "name": "VM Number of Snapshots Older than Two Days",
+      "formula": "count(${this, attribute=diskspace|snapshot|numberOfDays, where=($value > 2)})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "c0e07f55-de6c-4e2f-ae7d-061f22ddd36a": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134164,
+      "name": "Count of ESXi 6.7.0",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.7.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.7.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "1aa6f2d0-f701-41b7-8db9-1094c73b1414": {
+      "resourceKinds": [],
+      "modificationTime": 1724161134171,
+      "name": "Max VM Dropped Packet in a Cluster",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=net|dropped, depth=2})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "8669afb0-4680-4008-94c1-9a020254292f": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134174,
+      "name": "Count of ESXi 6.5.0 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.5.0\", depth=4})",
+      "description": "Track deployments of ESXi 6.5.0 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "01b91453-1722-4d93-b2b1-066be0596dd0": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134178,
+      "name": "Ops. VM Page-In Rate %",
+      "formula": "Max([0, ${this, metric=guest|page.inRate_latest} ])/ Max([1, ${this, metric=guest|mem.needed_latest } ]) * 100",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "bb35ec23-6079-4d82-9730-3743ed682387": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "HostSystem",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134182,
+      "name": "Ops. Max VM CPU Co-Stop (%)",
+      "formula": "Max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|costopPct, depth=5})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "e00bac67-9a22-4276-8e47-546daf71072f": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "CustomDatacenter",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "ClusterComputeResource",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "vSphere World",
+            "adapterKindKey": "VMWARE"
+         },
+         {
+            "resourceKindKey": "Datacenter",
+            "adapterKindKey": "VMWARE"
+         }
+      ],
+      "modificationTime": 1724161134187,
+      "name": "Rightsize - vCPUs to Remove from Oversized VMs",
+      "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|oversized|vcpus, depth=10})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "bac94c64-ebd3-40a6-992e-7fd1b4d480b4": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134191,
+      "name": "Rightsize - Potential Memory Consumed Increase (GB)",
+      "formula": "(${this, metric=summary|undersized} ? ${this, metric=summary|undersized|memory} : 0)/1024/1024",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "dce0f070-6750-4ca8-a928-5fee540ddeff": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134194,
+      "name": "Ops. Cluster KPI with vSAN KPI",
+      "formula": "avg ([  ${adaptertype=VirtualAndPhysicalSANAdapter, objecttype=VirtualSANDCCluster, metric=Super Metric|sm_d6d21496-971e-46d1-b583-2742da31ce46, depth=1},   ${adaptertype=VirtualAndPhysicalSANAdapter, objecttype=VirtualSANDCCluster, metric=Super Metric|sm_f20bb12a-dd82-4214-b704-4b73988afc0e, depth=1}, ${this, metric=Super Metric|sm_88ce6c62-20be-495f-a724-6a7285994a65} ])     ",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "a860dfea-71ab-45fc-a3be-f92b1192551a": {
+      "resourceKinds": [{
+         "resourceKindKey": "VMwareAdapter Instance",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1724161134200,
+      "name": "Count of prior to ESXi 7.0.3 by vCenter",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.2\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.1\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 7.0.0\", depth=4}) + count(${adaptertype=VMWARE, objecttype=HostSystem, metric=summary|version, where=\"startsWith 6.0\", depth=4})",
+      "description": "Track deployments of prior to ESXi 7.0.3 over time",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   },
+   "6e2e2209-1bf7-4625-b9b8-2fd927c71994": {
+      "resourceKinds": [{
+         "resourceKindKey": "Multi-tier Applications",
+         "adapterKindKey": "Container"
+      }],
+      "modificationTime": 1724161134204,
+      "name": "Ops. Multi-tier Application Health",
+      "formula": "Min(${adaptertype=Container, objecttype=Application Tier, attribute=Super Metric|sm_a825d30e-e879-4a87-bee0-6cfd4c8a3330, depth=1})",
+      "description": "",
+      "unitId": "",
+      "modifiedBy": "ba69c70f-4f2e-47fa-b1b7-302b2dd3502d"
+   }
+}

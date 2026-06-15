@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Content>
+        
+    <Views>
+                
+        <ViewDef id="e6cfdb98-0fcb-4b3c-9f87-fc1562639279">
+                        
+            <Title>VM Snapshot Age Bar Chart v4</Title>
+                        
+            <Description>VM Snapshot Age Bar Chart v4</Description>
+                        
+            <SubjectType adapterKind="VMWARE" resourceKind="VirtualMachine" type="descendant"/>
+                        
+            <Usage>dashboard</Usage>
+                        
+            <Usage>report</Usage>
+                        
+            <Usage>details</Usage>
+                        
+            <Usage>content</Usage>
+                        
+            <Controls>
+                                
+                <Control id="time-interval-selector_id_3569" type="time-interval-selector" visible="false">
+                                        
+                    <Property name="advancedTimeMode" value="false"/>
+                                        
+                    <Property name="unit" value="DAYS"/>
+                                        
+                    <Property name="count" value="7"/>
+                                    
+                </Control>
+                                
+                <Control id="attributes-selector_id_3570" type="attributes-selector" visible="false">
+                                        
+                    <Property name="attributeInfos">
+                                                
+                        <List>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="objectType" value="RESOURCE"/>
+                                        
+                                    <Property name="attributeKey" value="diskspace|snapshot|snapshotAge"/>
+                                        
+                                    <Property name="isStringAttribute" value="false"/>
+                                        
+                                    <Property name="adapterKind" value="VMWARE"/>
+                                        
+                                    <Property name="resourceKind" value="VirtualMachine"/>
+                                        
+                                    <Property name="rollUpType" value="NONE"/>
+                                        
+                                    <Property name="rollUpCount" value="0"/>
+                                        
+                                    <Property name="transformations">
+                                                
+                                        <List>
+                                                        
+                                            <Item value="CURRENT"/>
+                                                    
+                                        </List>
+                                            
+                                    </Property>
+                                        
+                                    <Property name="isProperty" value="false"/>
+                                        
+                                    <Property name="displayName" value="Snapshot Age"/>
+                                        
+                                    <Property name="isShowRelativeTimestamp" value="false"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                    
+                        </List>
+                                            
+                    </Property>
+                                    
+                </Control>
+                                
+                <Control id="buckets-control_id_3571" type="buckets-control" visible="false">
+                                        
+                    <Property name="maxValue" value="0"/>
+                                        
+                    <Property name="minValue" value="0"/>
+                                        
+                    <Property name="dynamicCalcFunction" value="SIMPLEMAXMIN"/>
+                                        
+                    <Property name="bucketInfos">
+                                                
+                        <List>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="1"/>
+                                        
+                                    <Property name="endValue" value="7"/>
+                                        
+                                    <Property name="bucketColor" value="7D7DDE"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="8"/>
+                                        
+                                    <Property name="endValue" value="14"/>
+                                        
+                                    <Property name="bucketColor" value="BD88BD"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="15"/>
+                                        
+                                    <Property name="endValue" value="30"/>
+                                        
+                                    <Property name="bucketColor" value="4ECAC2"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="31"/>
+                                        
+                                    <Property name="endValue" value="90"/>
+                                        
+                                    <Property name="bucketColor" value="EAC294"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="90"/>
+                                        
+                                    <Property name="endValue" value="350"/>
+                                        
+                                    <Property name="bucketColor" value="4DABD5"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                        
+                            <Item>
+                                
+                                <Value>
+                                        
+                                    <Property name="startValue" value="351"/>
+                                        
+                                    <Property name="endValue" value="999"/>
+                                    
+                                </Value>
+                                                            
+                            </Item>
+                                                    
+                        </List>
+                                            
+                    </Property>
+                                        
+                    <Property name="isDynamic" value="false"/>
+                                        
+                    <Property name="isSum" value="false"/>
+                                    
+                </Control>
+                                
+                <Control id="metadata_id_3572" type="metadata" visible="false">
+                                        
+                    <Property name="maxPointsCount" value="5000"/>
+                                        
+                    <Property name="hideObjectNameColumn" value="false"/>
+                                        
+                    <Property name="listTopResultSize" value="-1"/>
+                                    
+                </Control>
+                            
+            </Controls>
+                        
+            <DataProviders>
+                                
+                <DataProvider dataType="distribution-view" id="distribution-view_id_3568"/>
+                            
+            </DataProviders>
+                        
+            <Presentation type="bar-chart"/>
+                    
+        </ViewDef>
+            
+    </Views>
+    
+</Content>

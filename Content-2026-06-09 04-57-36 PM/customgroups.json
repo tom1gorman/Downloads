@@ -1,0 +1,4017 @@
+{
+   "customGroups": [
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-8995-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-8995-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-8995-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 8995",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "mgtroc"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CMDB_ServerInfo",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "DistributedVirtualPortgroup",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-R-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Networking-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-R-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Replication VMs and Port Groups (Zerto)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "NCDV_PCE"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NCDV PCE",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "TPDC_DIV_NFDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_NFDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_NFDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-North Florida",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_CPDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_CPDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_CPDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Capital",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "appmso"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Meditech MSO",
+         "description": "MOS servers for Meditech 5.6",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_MTDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "SLDC_DIV_MTDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Mountain",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1758-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1758-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1758-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1758",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "config|guestFullName",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "Microsoft Windows Server 2019 (64-bit)"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Windows Server 2019",
+         "description": "Windows Server 2019",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|type",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "vsan"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "vSAN Datastores",
+         "description": "List of vSphere datastores that are backed by vSAN. Use this group to see all the vSAN datastores, filtering out the non vSAN datastores.",
+         "started": true
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|guest|guestFamily",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "windowsGuest"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Windows Servers - All",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7709-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7709-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7709-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 7709",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "sedc_pcc_ncdv"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NCDV SEDC",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "config|guestFullName",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "Microsoft Windows Server 2012 (64-bit)"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Windows Server 2012",
+         "description": "Server 2012",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-3645-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-3645-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-3645-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 3645",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "mgtroc"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "dbsroc"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Marty's App",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "VMware Cloud",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VMwareAdapter Instance",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|cloud_type",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "PRIVATE_CLOUD"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "VMware Private Cloud",
+         "description": "vSphere Data Centers that are not part of any of VMware-based public clouds (e.g. VMware on Amazon, Azure VMware Solution)",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPWEBAAS"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPWEBAAS"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPWEBAAS"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "ORDCWPWEBAAS",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-XRDC and TPDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "xrdcvpvmsdiv"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-XRDC and TPDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "XRDCVMSDIV"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-XRDC Infrastructure",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "TPDC_DIV_WFDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_WFDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-West Florida",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "config|guestFullName",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "Microsoft Windows Server 2008 R2 (64-bit)"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Windows Server 2008",
+         "description": "Windows Server 2008 R2",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": []
+            },
+            {
+               "resourceKind": "StoragePod",
+               "adapterKind": "VMWARE",
+               "rules": []
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "All Datastores",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS02"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS02"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRDCCVMSIS02 (XRDCVMSSIS02)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_CWDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "StringMetricPropertyRule",
+                  "ruleMetricKey": "summary|parentFolder",
+                  "isProperty": true,
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_CWDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_CWDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Central West Texas",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Department",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-vROps-CorpCDA"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CorpCDA Servers",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_FWDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "SLDC_DIV_FWDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_FWDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Far West",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "TPDC_DIV_SATL"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_SATL"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "SEDC_PCC_SATL"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-South Atlantic",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "dbsroc"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CMDB_Serverinfo_DB",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "CMDB_App",
+         "membershipDefinition": {"includedResources": [{
+            "resourceKind": "CMDB_App_Instance",
+            "adapterKind": "Container",
+            "name": "CMDB_PatientKeeper - Capital"
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_PatientKeeper",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "XRDC_DIV_TRDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "TRDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_TRDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-TriStar",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "xrdclpprxmdm01a"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "xrdclpappwso"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "xrdclpprxmdm01b"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "Workspace One",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VCFDomain",
+            "adapterKind": "VcfAdapter",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "configuration|DomainType",
+               "isProperty": true,
+               "ruleStringOperator": "NOT_EQUALS",
+               "ruleStringValue": "MANAGEMENT"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "VCF Workload World",
+         "description": "VCF Workload World",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "DistributedVirtualPortgroup",
+               "adapterKind": "VMWARE",
+               "rules": []
+            },
+            {
+               "resourceKind": "VmwareDistributedVirtualSwitch",
+               "adapterKind": "VMWARE",
+               "rules": []
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "All Distributed Switches and Port Groups",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "XRDCLPAPPQYS12"
+               },
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "NOT_CONTAINS",
+                  "ruleStringValue": "XRDCLPAPPQYS12A"
+               }
+            ]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_Qulays_VDI_effort_Scanner_VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "ClusterComputeResource",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "VMSPCF"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Private Cloud FSED",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_MADV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_MADV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_MADV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-MidAmerica",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1272-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1272-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1272-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1272",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "-2829-"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 2829",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "LPGTWCRS"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "LPCARSCAPE"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "Carescape VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRDCCVMMGT01 (XRDCVMS01)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave5"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave5",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave6"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave6",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave3"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave3",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "HIR"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Nursecall",
+         "description": "Custom Group for Nursecall (Hill-Rom)",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2449-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2449-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2449-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 2449",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Endpoint",
+            "adapterKind": "APPOSUCP",
+            "rules": []
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Operating System World",
+         "description": "The top level group for VMware Aria Operations Application Management Pack. This is a built-in group, hence it is not customizable. It provides the starting line for overall navigation. Use this to see all the objects under the solution.",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-6036-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-6036-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-6036-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 6036",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "NADCVMS54"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "NADCVMS54"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "NADCVMS54"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CLUSTER-NADCVMS54",
+         "description": "",
+         "started": true,
+         "policy": "74e40a81-8412-4753-b06e-51bb11184152"
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "-1163-"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1163",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "XRDCVMSSIS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRDCCVMSIS01 (XRDCVMSSIS01)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-XRDC and TPDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "tpdcvpvmsdiv"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-XRDC and TPDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "TPDCVMSDIV"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "TPDCVMSDIV"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "tpdccvm"
+                  },
+                  {
+                     "ruleType": "StringMetricPropertyRule",
+                     "ruleMetricKey": "summary|isLocal",
+                     "isProperty": true,
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "false"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-TPDC Infrastructure",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_GCDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_GCDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_GCDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Gulf Coast",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "-1118-"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1118",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0407-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0407-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0407-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 0407",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2889-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2889-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2889-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 2889",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Department",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "CORPODSDSK"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "ODaaS",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "XRDCLPAPPQYS"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_XRDC_Qulays_Scanner_VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "TPDC_DIV_EFDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_EFDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-East Florida",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "cms0"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "cms0"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "cms0"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DotCMS",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS01"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS01"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS01"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS02"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS02"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCQVMS02"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "QA Hosts, Clusters, and VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave7"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave7",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0568-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0568-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-0568-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 0568",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "DC01"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "Shared Infrastructure VMs",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "FWDCWPAPPDRF"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_FWDC_DrFirst ePrescribe",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "VOP"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "vROps VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7518-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7518-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-7518-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 7518",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{"rules": [
+            {
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "EPI"
+            },
+            {
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "NOT_CONTAINS",
+               "ruleStringValue": "vra"
+            }
+         ]}]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "EPIC Infrastructure",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "XRDCWPAPPDRF"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_XRDC_DrFirst ePrescribe",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_SADV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_SADV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_SADV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-San Antonio",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS04"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "XRDCVMSSIS04"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRDCCVMSIS04 (XRDCVMSSIS04)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "FWDC_DIV_NCDV_DR"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NCDV FWDC DR",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "sldczvms"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "SLDC DMZ Clusters",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "fwdczvms"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "FWDC DMZ Clusters",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "xrdczvms"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "XRDC DMZ Clusters",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "ClusterComputeResource",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "PCE_CPDV"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CPDV Edge Clusters",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "config|guestFullName",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "Microsoft Windows Server 2016 (64-bit)"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Windows Server 2016",
+         "description": "Windows Server 2016",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "TPDC_DIV_HTWS"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-HealthTrustWorkforceSolutions",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "StringMetricPropertyRule",
+                  "ruleMetricKey": "summary|parentFolder",
+                  "isProperty": true,
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_CODV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "SLDC_DIV_CODV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "CODV_PCE"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-Continental",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2172-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2172-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2172-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 2172",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1494-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1494-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1494",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-FWDC and SLDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "fwdcvpvmsdiv"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-FWDC and SLDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "FWDCVMSDIV"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-FWDC Infrastructure",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Location",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "ClusterComputeResource",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "xrdcvmssis"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "XR SI N2 Clusters",
+         "description": "XR Clusters that are using N-2",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "-6124-"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 6124",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "NOT_CONTAINS",
+               "ruleStringValue": "DC01"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "Edge Site VMs",
+         "description": "",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS01"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS01"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS01"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CLUSTER-XRDCVMS01",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VCFDomain",
+            "adapterKind": "VcfAdapter",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "configuration|DomainType",
+               "isProperty": true,
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "MANAGEMENT"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "VCF Management World",
+         "description": "VCF Management World",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_NTDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_NTDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "PCE_NTDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-North Texas",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-4836-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-4836-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-4836-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 4836",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPAPPCCE"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPAPPCCE"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "ORDCWPAPPCCE"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "ORDCWPAPPCCE",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "CMDB_App_Instance",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "CRDVWPBRGPKM02"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "CRDVWPWEBPCP02"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "CRDVWPCPEPCP02"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_PatientKeeper - Capital",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "Datastore",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|type",
+               "isProperty": true,
+               "ruleStringOperator": "NOT_EQUALS",
+               "ruleStringValue": "vsan"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Non vSAN Datastores",
+         "description": "List of vSphere datastores that are not backed by vSAN. This can be VMFS or NFS. It includes both local and shared datastores. Use this group to see all the non vSAN datastores, filtering out the vSAN datastores.",
+         "started": true
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "IPD"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "iPeople VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1260-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1260-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1260-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1260",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRPSVMSSIS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "XRPSVMSSIS01"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRPSCVMSIS01 (XRPSVMSSIS01)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-FWDC and SLDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "sldcvpvmsdiv"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "DIV-FWDC and SLDC"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "SLDCVMSDIV"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-SLDC Infrastructure",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1263-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1263-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1263-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1263",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave2"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave2",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "StringMetricPropertyRule",
+               "ruleMetricKey": "summary|tag",
+               "isProperty": true,
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "vROps-Permissions-NTNX-SIS-Wave4"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Migration-NTNX-SIS-Wave4",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "XRDC_DIV_NCDV"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NCDV XRDC",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "NTNX-"
+               },
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-CVM"
+               }
+            ]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "All Nutanix CVMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "SQL"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "SQL"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "SQL"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS08"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS08"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDCVMS08"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDCVMS27"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDCVMS27"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDCVMS27"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "All SQL Clusters, Hosts, and VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "tpdczvms"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "TPDC DMZ Clusters",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [
+            {"rules": [
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "pyx"
+               },
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "xrdc"
+               }
+            ]},
+            {"rules": [
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "pyx"
+               },
+               {
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "fwdc"
+               }
+            ]}
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Pyxis ES",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Manual Application",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "FWDCLPAPPQYS"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": false,
+         "name": "CMDB_FWDC_Qulays_Scanner_VMs",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2516-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2516-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-2516-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 2516",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "CAC02"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CAC_Dallas_Prod",
+         "description": "",
+         "started": true,
+         "policy": "4840eabb-273c-4120-9ed0-3d46fec33168"
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS03"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "NTNX-"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "-CVM"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "EQUALS",
+                     "ruleStringValue": "XRDCVMSSIS03"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "local"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "reservation"
+                  },
+                  {
+                     "ruleType": "ResourceNameRule",
+                     "ruleStringOperator": "NOT_CONTAINS",
+                     "ruleStringValue": "wintel"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "CVM - XRDCCVMSIS03 (XRDCVMSSIS03)",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "MHB"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Mobile Heartbeat",
+         "description": "MHB Custom Group",
+         "started": true
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "NADCWPAPPTDI"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "NADCWPAPPTDI"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "NADCWPAPPTDI"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NADCWPAPPTDI",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "WPSDPSCM"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "WPSCMSDP"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "SCCM Field Distribution Points",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Function",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleType": "ResourceNameRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "WEB"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "All Web Servers",
+         "description": "",
+         "started": true,
+         "policy": "74e40a81-8412-4753-b06e-51bb11184152"
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1964-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1964-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-1964-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 1964",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"includedResources": [
+            {
+               "resourceKind": "HCA Division",
+               "adapterKind": "Container",
+               "name": "DIV-Central West Texas"
+            },
+            {
+               "resourceKind": "HCA Division",
+               "adapterKind": "Container",
+               "name": "DIV-Capital"
+            },
+            {
+               "resourceKind": "HCA Division",
+               "adapterKind": "Container",
+               "name": "DIV-Continental"
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "HCA Divisions - ALL",
+         "description": "5/13/26 - Creating to test dashboard widget (Tom Gorman)",
+         "started": true,
+         "policy": "f4ca8a9f-4443-4317-8ecf-f5329204fd03"
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_NCDV"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "FWDC_DIV_NCDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "NCDV_PCE"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "XRDC_DIV_NCDV_DR"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "EQUALS",
+                  "ruleStringValue": "SEDC_PCC_NCDV"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "DIV-North Carolina",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "HCA Division",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [{
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "EQUALS",
+               "ruleStringValue": "XRDC_DIV_NCDV_DR"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "NCDV XRDC DR",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "GCDVV1CISC81"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "StringMetricPropertyRule",
+                  "ruleMetricKey": "summary|tag",
+                  "isProperty": true,
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "HugsWifi"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "HUGs app servers",
+         "description": "HUGs app servers",
+         "started": true,
+         "policy": "9ade7ac0-1aa9-405d-9589-926fdcb1e5fa"
+      },
+      {
+         "resourceKind": "Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "intsin"
+               }]
+            },
+            {
+               "resourceKind": "ClusterComputeResource",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "intsin"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "ANCESTOR",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "intsin"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Simplify Integration / Cloverleaf",
+         "description": "",
+         "started": true
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "Datastore",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleType": "ResourceNameRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-400001-"
+               }]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-400001-"
+               }]
+            },
+            {
+               "resourceKind": "HostSystem",
+               "adapterKind": "VMWARE",
+               "rules": [{
+                  "ruleTravesalSpec": "vSphere Hosts and Clusters-VMWARE-vSphere World",
+                  "ruleRelationshipType": "PARENT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "-400001-"
+               }]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "Storage Array 400001",
+         "description": "",
+         "started": true
+      }
+   ],
+   "customGroupTypes": [
+      {
+         "resourceKind": "CMDB_App_Instance",
+         "localization": [
+            {
+               "resourceKindName": "CMDB_App_Instance",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "CMDB_App_Instance",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "VMware Cloud",
+         "localization": [
+            {
+               "resourceKindName": "VMware Cloud",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "VMware Cloud",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "CMDB_App",
+         "localization": [
+            {
+               "resourceKindName": "CMDB_App",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "CMDB_App",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Nutanix Cluster CVMs",
+         "localization": [
+            {
+               "resourceKindName": "Nutanix Cluster CVMs",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "Nutanix Cluster CVMs",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Operating Systems",
+         "localization": [
+            {
+               "resourceKindName": "Operating Systems",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "Operating Systems",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Function",
+         "localization": [
+            {
+               "resourceKindName": "Funktion",
+               "locale": "de"
+            },
+            {
+               "resourceKindName": "功能",
+               "locale": "zh_TW"
+            },
+            {
+               "resourceKindName": "기능",
+               "locale": "ko"
+            },
+            {
+               "resourceKindName": "機能",
+               "locale": "ja"
+            },
+            {
+               "resourceKindName": "Function",
+               "locale": "en"
+            },
+            {
+               "resourceKindName": "功能",
+               "locale": "zh_CN"
+            },
+            {
+               "resourceKindName": "Fonction",
+               "locale": "fr"
+            },
+            {
+               "resourceKindName": "Función",
+               "locale": "es"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Department",
+         "localization": [
+            {
+               "resourceKindName": "Abteilung",
+               "locale": "de"
+            },
+            {
+               "resourceKindName": "部門",
+               "locale": "zh_TW"
+            },
+            {
+               "resourceKindName": "부서",
+               "locale": "ko"
+            },
+            {
+               "resourceKindName": "部門",
+               "locale": "ja"
+            },
+            {
+               "resourceKindName": "Department",
+               "locale": "en"
+            },
+            {
+               "resourceKindName": "部门",
+               "locale": "zh_CN"
+            },
+            {
+               "resourceKindName": "Département",
+               "locale": "fr"
+            },
+            {
+               "resourceKindName": "Departamento",
+               "locale": "es"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Manual Application",
+         "localization": [
+            {
+               "resourceKindName": "Manuelle Anwendung",
+               "locale": "de"
+            },
+            {
+               "resourceKindName": "手動應用程式",
+               "locale": "zh_TW"
+            },
+            {
+               "resourceKindName": "수동 애플리케이션",
+               "locale": "ko"
+            },
+            {
+               "resourceKindName": "手動アプリケーション",
+               "locale": "ja"
+            },
+            {
+               "resourceKindName": "Manual Application",
+               "locale": "en"
+            },
+            {
+               "resourceKindName": "手动应用程序",
+               "locale": "zh_CN"
+            },
+            {
+               "resourceKindName": "Application manuelle",
+               "locale": "fr"
+            },
+            {
+               "resourceKindName": "Aplicación manual",
+               "locale": "es"
+            }
+         ]
+      },
+      {
+         "resourceKind": "MHO VMs",
+         "localization": [
+            {
+               "resourceKindName": "Groups of VMs",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "Groups of VMs",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Storage Arrays",
+         "localization": [
+            {
+               "resourceKindName": "Storage Array",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "Storage Array",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Environment",
+         "localization": [
+            {
+               "resourceKindName": "Umgebung",
+               "locale": "de"
+            },
+            {
+               "resourceKindName": "環境",
+               "locale": "zh_TW"
+            },
+            {
+               "resourceKindName": "환경",
+               "locale": "ko"
+            },
+            {
+               "resourceKindName": "環境",
+               "locale": "ja"
+            },
+            {
+               "resourceKindName": "Environment",
+               "locale": "en"
+            },
+            {
+               "resourceKindName": "环境",
+               "locale": "zh_CN"
+            },
+            {
+               "resourceKindName": "Environnement",
+               "locale": "fr"
+            },
+            {
+               "resourceKindName": "Entorno",
+               "locale": "es"
+            }
+         ]
+      },
+      {
+         "resourceKind": "HCA Division",
+         "localization": [
+            {
+               "resourceKindName": "HCA Division",
+               "locale": "en_US"
+            },
+            {
+               "resourceKindName": "HCA Division",
+               "locale": "en"
+            }
+         ]
+      },
+      {
+         "resourceKind": "Location",
+         "localization": [
+            {
+               "resourceKindName": "Standort",
+               "locale": "de"
+            },
+            {
+               "resourceKindName": "位置",
+               "locale": "zh_TW"
+            },
+            {
+               "resourceKindName": "위치",
+               "locale": "ko"
+            },
+            {
+               "resourceKindName": "場所",
+               "locale": "ja"
+            },
+            {
+               "resourceKindName": "Location",
+               "locale": "en"
+            },
+            {
+               "resourceKindName": "位置",
+               "locale": "zh_CN"
+            },
+            {
+               "resourceKindName": "Emplacement",
+               "locale": "fr"
+            },
+            {
+               "resourceKindName": "Ubicación",
+               "locale": "es"
+            }
+         ]
+      }
+   ]
+}
