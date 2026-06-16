@@ -1,0 +1,40 @@
+PS C:\Users\NTU2422> git config --global user.name "Tom Gorman"
+PS C:\Users\NTU2422> git config --global user.email tom1gorman@gmail.com
+PS C:\Users\NTU2422> code
+PS C:\Users\NTU2422> git config --global core.editor code
+PS C:\Users\NTU2422> git config --list --show-origin
+PS C:\Users\NTU2422> cd .\Downloads\
+PS C:\Users\NTU2422\Downloads> git remote add Downloads https://github.com/tom1gorman/Downloads.git
+
+
+PS C:\Users\NTU2422\Downloads> git branch -M main
+PS C:\Users\NTU2422\Downloads> git remote add origin https://github.com/tom1gorman/Downloads.git
+PS C:\Users\NTU2422\Downloads> git push -u origin main
+info: please complete authentication in your browser...
+
+
+To https://github.com/tom1gorman/Downloads.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\NTU2422\Downloads> git add .
+PS C:\Users\NTU2422\Downloads> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+PS C:\Users\NTU2422\Downloads> git add .
+PS C:\Users\NTU2422\Downloads> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Content-2026-06-15 05-27-21 PM.zip
+
+PS C:\Users\NTU2422\Downloads> git commit -m
+error: switch `m' requires a value
+PS C:\Users\NTU2422\Downloads> git commit -m "Add HCA content file: Content-2026-06-15 05-27-21 PM.zip"
+
+[main 2194b31] Add HCA content file: Content-2026-06-15 05-27-21 PM.zip
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Content-2026-06-15 05-27-21 PM.zip
+PS C:\Users\NTU2422\Downloads> git push
